@@ -3,21 +3,26 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      done: false
+      videoId: undefined
     };
   }
 
-  onClick () {
-    this.setState({
-      done: true
-    });
-    console.log('hello');
+  onClick (video) {
+    console.log(video);
+    // this.setState({
+    //   videoId: 
+    // });
   }
 
-  render (video) {
+  render (video, videos) {
     this.video = video;
     video = video || exampleVideoData[0];
 
+    this.videos = videos;
+    videos = videos || exampleVideoData;
+
+    // if (this.state.video === 'hello') {
+    // }
     return ( 
       <div>
         <Nav />
@@ -25,7 +30,7 @@ class App extends React.Component {
           <VideoPlayer video={video}/>
         </div>
         <div className="col-md-5">
-          <VideoList onClick={this.onClick.bind(this)} videos={exampleVideoData}/>
+          <VideoList onClick={this.onClick.bind(this, video)} videos={exampleVideoData}/>
         </div>
       </div> 
     );
