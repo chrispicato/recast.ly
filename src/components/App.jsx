@@ -1,6 +1,17 @@
 class App extends React.Component { 
   constructor (props) {
     super(props);
+
+    this.state = {
+      done: false
+    };
+  }
+
+  onClick () {
+    this.setState({
+      done: true
+    });
+    console.log('hello');
   }
 
   render (video) {
@@ -14,7 +25,7 @@ class App extends React.Component {
           <VideoPlayer video={video}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={exampleVideoData}/>
+          <VideoList onClick={this.onClick.bind(this)} videos={exampleVideoData}/>
         </div>
       </div> 
     );
