@@ -3,12 +3,15 @@ class App extends React.Component {
     super(props);
   }
 
-  render () {
+  render (video) {
+    this.video = video;
+    video = video || exampleVideoData[0];
+
     return ( 
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer />
+          <VideoPlayer video={video}/>
         </div>
         <div className="col-md-5">
           <VideoList videos={exampleVideoData}/>
