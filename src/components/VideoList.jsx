@@ -1,8 +1,7 @@
 var VideoList = (props) => (
   <div className="video-list media">
-    {props.list.map(list =>
-      console.log('were iterating');
-      <VideoListEntry list={list}/>
+    {props.videos.map(video =>
+      <VideoListEntry video={video}/>
     )}
   </div>
 );
